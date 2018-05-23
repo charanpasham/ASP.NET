@@ -1,0 +1,37 @@
+﻿@model ProjectDemo.ViewModels.CustomerOrder
+@{
+    ViewData["Title"] = "EditCustomers";
+}
+
+<h2>Edit Customers</h2>
+
+
+<h3>Order Details</h3>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.OrderViewModel.OrderCollection[0].EmployeeID)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderViewModel.OrderCollection[0].OrderDate)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderViewModel.OrderCollection[0].RequiredDate)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderViewModel.OrderCollection[0].ShipAddress)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderViewModel.OrderCollection[0].ShipCity)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderViewModel.OrderCollection[0].ShipRegion)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var mymodel in Model.OrderViewModel.OrderCollection)
+        {
+        <tr>
+            <td>@mymodel.EmployeeID</td>
+            <td>@mymodel.OrderDate</td>
+            <td>@mymodel.RequiredDate</td>
+            <td>@mymodel.ShipAddress</td>
+            <td>@mymodel.ShipCity</td>
+            <td>@mymodel.ShipRegion</td>
+        </tr>
+
+        }
+     
+    </tbody>
+</table>
+
